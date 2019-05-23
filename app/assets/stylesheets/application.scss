@@ -10,7 +10,7 @@
 }
 
 table {
-	
+	table-layout: auto;
 	letter-spacing: 1px;
 	border-collapse: collapse;
 	border: 1px solid black;
@@ -38,6 +38,13 @@ th[scope="row"] {
 	backgroud-color : #d7d9f2;
 	}
 
-.body {
-	visibility : hidden;
+
+.email-object {
+	display: none;
+}
+.email-body {
+	display: none;
+}
+.body-buttons {
+	display: none;
 }

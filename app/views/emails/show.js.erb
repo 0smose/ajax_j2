@@ -1,10 +1,17 @@
 
-	var currentBody = document.getElementById("<%=@email.body%>");
+	var currentBody = document.getElementById("<%=@email.id%>");
+	var emailObject = currentBody.getElementsByClassName("email-object")[0]
+	var emailBody = currentBody.getElementsByClassName("email-body")[0]
+	var bodyButtons =currentBody.getElementsByClassName("body-buttons")[0]
+
 	//var currentObject = document.getElementById("object");
 
-	currentBody.style.visibility = "visible";
+	emailObject.style.display = "block"
+	emailBody.style.display = "block"
+	bodyButtons.style.display = "block"
 	
 	
-	console.log(currentBody)
+
+	
 
 	

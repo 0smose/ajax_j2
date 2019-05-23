@@ -11,20 +11,26 @@
 	</div>
 	<div class="row">
 		<div class="col">
-<table id="myEmail">
+<table id="myEmail" class="table table-bordered">
 	
 	<tr>
 	<th scope="col">liste d'emails</th>
 	<th scope="col">Email selectionné</th>
 	</tr>
 
-
+	
   <% @emails.each do |email|  %>
   <tr >
   <td id="object"> <%=link_to email_path(email.id), data: {remote: true } do %> <%=email.object%> <%end%> </td>
- <td class="body" id="<%=email.body%>"><p style="font-size: 25px;"><%=email.object%></p><p><%=email.body%></p></td>
+   <td class="body" id="<%=email.id%>"><p class="email-object"style="font-size: 25px;"><%=email.object%></p><p class="email-body"><%=email.body%></p>
+	<p class="body-buttons"><%= link_to emails_path, class: "btn btn-sm btn-danger"  do %>Supprimer<%end %>
+    <%= link_to emails_path, class: "btn btn-sm btn-primary"  do %>Marquer comme non lu<%end %></p>
+ </td>
+  <%end%>
+  
+
 </tr>
-	<%end%>
+
 
 </table>
 </div>
