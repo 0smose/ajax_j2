@@ -22,7 +22,7 @@
   <% @emails.each do |email|  %>
   <tr >
   <td id="object"> <%=link_to email_path(email.id), data: {remote: true } do %> <%=email.object%> <%end%> </td>
- <td class="body" id="<%=email.body%>"><%=email.body%> </td>
+ <td class="body" id="<%=email.body%>"><p style="font-size: 25px;"><%=email.object%></p><p><%=email.body%></p></td>
 </tr>
 	<%end%>
 
