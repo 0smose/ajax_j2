@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+L'équipe bénévole de programmeurs : 
+Carolina Ferreira et Robin d'Ercole
 
-Things you may want to cover:
+Hola !
 
-* Ruby version
+Pour fiare tourner l'app en local voici les étapes à suivre :
+ 
+-git clone
+- rails db:drop
+- rails db:create
+-rails db:migrate
+-rails s ou rails server
+-rentre l'adresse localhost:3000 dans ton navigateur
 
-* System dependencies
+et voilààààà
 
-* Configuration
+Voici le lien de l'app en prod sur heroku ;) 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+http://ajaxmail.herokuapp.com/
