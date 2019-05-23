@@ -12,6 +12,14 @@ class EmailsController < ApplicationController
       end
 	end
 
+	def show
+		@email = Email.find(params[:id])
+				respond_to do |format|
+        format.html { }
+        format.js { }
+      end
+	end
+
 
   def index
   	@emails = Email.all
