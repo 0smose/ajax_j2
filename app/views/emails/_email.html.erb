@@ -1,5 +1,5 @@
 <tr >
- <td id="object"> <%=link_to email_path(email.id), data: {remote: true } do %> <%=email.object%> <%end%> </td>
+ <td class="object"> <%=link_to email_path(email.id), data: {remote: true } do %> <%=email.object%> <%end%> </td>
    <td class="body" id="<%=email.id%>"><p class="email-object"style="font-size: 25px;"><%=email.object%></p><p class="email-body"><%=email.body%></p>
 	<p class="body-buttons"><%= link_to emails_path, class: "btn btn-sm btn-danger"  do %>Supprimer<%end %>
     <%= link_to emails_path, class: "btn btn-sm btn-primary"  do %>Marquer comme non lu<%end %></p>

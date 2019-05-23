@@ -1,16 +1,20 @@
 
 	var currentBody = document.getElementById("<%=@email.id%>");
-	var emailObject = currentBody.getElementsByClassName("email-object")[0]
-	var emailBody = currentBody.getElementsByClassName("email-body")[0]
-	var bodyButtons =currentBody.getElementsByClassName("body-buttons")[0]
+	var emailObject = currentBody.getElementsByClassName("email-object")[0];
+	var emailBody = currentBody.getElementsByClassName("email-body")[0];
+	var bodyButtons =currentBody.getElementsByClassName("body-buttons")[0];
 
 	//var currentObject = document.getElementById("object");
+	var firstObject = document.getElementsByClassName("object")[0];
+	var objectToRemove = firstObject.nextElementSibling;
+	firstObject.insertAdjacentElement("afterend", currentBody);
+	objectToRemove.style.display = "none";
+	
+	currentBody.style.display = "block";
+	
+	
+	
 
-	emailObject.style.display = "block"
-	emailBody.style.display = "block"
-	bodyButtons.style.display = "block"
-	
-	
 
 	
 
