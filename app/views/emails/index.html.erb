@@ -1,6 +1,6 @@
   
 
-<div class="container col-5 mx-auto" >
+<div class="container" >
 	<div class="row mb-4">
 		<div class="col">
 		<%= link_to emails_path, method: :post, data: {remote: true  }, class: "btn btn-primary"  do %>
@@ -14,17 +14,24 @@
 <table id="myEmail" class="table table-bordered">
 	
 	<tr>
-	<th scope="col">liste d'emails</th>
-	<th scope="col">Email selectionné</th>
+	<th class="small-col" scope="col">liste d'emails</th>
+	<th class="big-col"scope="col">Email selectionné</th>
 	</tr>
 
 	
-  <% @emails.each do |email|  %>
+  <% @emails.order(id: :asc).each do |email|  %>
   <tr >
+  	<% if email.read == true %>
   <td class="object" id="ID<%=email.id%>"> <%=link_to email_path(email.id), data: {remote: true } do %> <%=email.object%> <%end%> </td>
+  <% else %>
+  <td class="object" id="ID<%=email.id%>" style="font-weight: bold;"> <%=link_to email_path(email.id), data: {remote: true } do %> <%=email.object%> <%end%> 
+  </td>
+  <%end%>
+
    <td class="body" id="<%=email.id%>"><p class="email-object"style="font-size: 25px;"><%=email.object%></p><p class="email-body"><%=email.body%></p>
 	<p class="body-buttons"><%= link_to email_path(id: email.id), method: :delete, class: "btn btn-sm btn-danger",  data: {remote: true }  do %>Supprimer<%end %>
-    <%= link_to emails_path, class: "btn btn-sm btn-primary"  do %>Marquer comme non lu<%end %></p>
+   		 <%= link_to email_path(id: email.id), method: "put", class: "btn btn-sm btn-primary"  do %>Marquer comme non lu<%end %></p>
+
  </td>
   <%end%>
   
