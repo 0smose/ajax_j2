@@ -1,0 +1,34 @@
+  
+
+<div class="container col-5 mx-auto" >
+	<div class="row mb-4">
+		<div class="col">
+		<%= link_to emails_path, method: :post, data: {remote: true  }, class: "btn btn-primary"  do %>
+          Recevoir un email
+          <%end %>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+<table id="myEmail">
+	
+	<tr>
+	<th scope="col">liste d'emails</th>
+	<th scope="col">Email selectionné</th>
+	</tr>
+
+
+  <% @emails.each do |email|  %>
+  <tr >
+  <td ><%=email.object%> </td>
+ <td><%=email.body%> </td>
+</tr>
+	<%end%>
+
+</table>
+</div>
+</div>
+
+</div>
+
